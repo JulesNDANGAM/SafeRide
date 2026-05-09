@@ -5,7 +5,7 @@
 ```
 ┌─────────────────────────────────────────────┐
 │  FRONTEND (React statique)                   │
-│  saferide.tondomaine.com  (LWS mutualisé)    │
+│  saferide.futureafri.com  (LWS mutualisé)    │
 │  • Fichiers HTML/CSS/JS statiques            │
 │  • .htaccess pour SPA routing                │
 │  • Hébergement existant, pas de coût extra   │
@@ -64,10 +64,10 @@ git push -u origin main
 
 | Key | Value |
 |-----|-------|
-| `SAFERIDE_ALLOWED_ORIGINS` | `https://saferide.tondomaine.com,http://localhost:5173` |
+| `SAFERIDE_ALLOWED_ORIGINS` | `https://saferide.futureafri.com,http://localhost:5173` |
 | `SAFERIDE_APP_NAME` | `SafeRide API` |
 
-> ⚠️ Remplace `saferide.tondomaine.com` par ton vrai sous-domaine LWS
+> ⚠️ Remplace `saferide.futureafri.com` par ton vrai sous-domaine LWS
 
 6. Cliquer **"Create Web Service"** → Render build et déploie (2-3 min)
 
@@ -149,7 +149,7 @@ Créer le fichier `frontend/dist/.htaccess` :
 
 1. Se connecter à https://panel.lws.fr
 2. Aller dans **Hébergement** → **Domaines** → **Sous-domaines**
-3. Créer un sous-domaine : `saferide.tondomaine.com`
+3. Créer un sous-domaine : `saferide.futureafri.com`
 4. Pointage : vers le dossier `/www/saferide/`
 5. Attendre la propagation DNS (5-30 min)
 
@@ -159,7 +159,7 @@ Créer le fichier `frontend/dist/.htaccess` :
 
 1. Télécharger FileZilla : https://filezilla-project.org/
 2. Se connecter au FTP LWS :
-   - Hôte : `ftp.tondomaine.com`
+   - Hôte : `ftp.futureafri.com`
    - Utilisateur : ton identifiant LWS
    - Mot de passe : ton mot de passe LWS
    - Port : 21
@@ -178,7 +178,7 @@ Créer le fichier `frontend/dist/.htaccess` :
 
 ### 3.3 Vérifier
 
-Ouvrir `https://saferide.tondomaine.com` → l'app SafeRide doit s'afficher.
+Ouvrir `https://saferide.futureafri.com` → l'app SafeRide doit s'afficher.
 
 ---
 
@@ -190,7 +190,7 @@ Une fois le frontend en ligne sur LWS, mettre à jour Render :
 2. Service `saferide-api` → **Environment**
 3. Mettre à jour `SAFERIDE_ALLOWED_ORIGINS` :
    ```
-   https://saferide.tondomaine.com,http://localhost:5173
+   https://saferide.futureafri.com,http://localhost:5173
    ```
 4. Render redémarre le backend automatiquement
 
@@ -201,7 +201,7 @@ Une fois le frontend en ligne sur LWS, mettre à jour Render :
 ### 5.1 Activer le SSL
 
 1. Panel LWS → **Hébergement** → **SSL**
-2. Activer Let's Encrypt pour `saferide.tondomaine.com`
+2. Activer Let's Encrypt pour `saferide.futureafri.com`
 3. Attendre la génération du certificat (5-10 min)
 
 ### 5.2 Forcer HTTPS via .htaccess
@@ -220,7 +220,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 | Service | URL |
 |---------|-----|
-| **Frontend (démo live)** | `https://saferide.tondomaine.com` |
+| **Frontend (démo live)** | `https://saferide.futureafri.com` |
 | **Backend API (Swagger)** | `https://saferide-api.onrender.com/docs` |
 | **Backend Health** | `https://saferide-api.onrender.com/health` |
 | **Backend Cost Combinations** | `https://saferide-api.onrender.com/trust-matrix/cost-combinations` |

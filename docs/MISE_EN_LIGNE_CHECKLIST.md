@@ -29,13 +29,13 @@ Créer un service Render **Web Service** depuis GitHub.
 
 | Key | Value |
 |---|---|
-| `SAFERIDE_ALLOWED_ORIGINS` | `https://saferide.tondomaine.com,http://localhost:5173,http://127.0.0.1:5173` |
+| `SAFERIDE_ALLOWED_ORIGINS` | `https://saferide.futureafri.com,http://localhost:5173,http://127.0.0.1:5173` |
 | `SAFERIDE_ADMIN_TOKEN` | choisir un token secret fort |
 | `SAFERIDE_APP_NAME` | `SafeRide API` |
 | `SAFERIDE_USE_REAL_NAC` | `off` |
 | `PYTHON_VERSION` | `3.12` |
 
-Remplacer `https://saferide.tondomaine.com` par le vrai sous-domaine LWS.
+Remplacer `https://saferide.futureafri.com` par le vrai sous-domaine LWS.
 
 ## 3. Frontend LWS
 
@@ -59,8 +59,8 @@ Fichiers attendus :
 
 | Page | URL |
 |---|---|
-| Application passager | `https://saferide.tondomaine.com` |
-| Admin | `https://saferide.tondomaine.com/#admin` |
+| Application passager | `https://saferide.futureafri.com` |
+| Admin | `https://saferide.futureafri.com/#admin` |
 | API Swagger | `https://saferide-api.onrender.com/docs` |
 | Health API | `https://saferide-api.onrender.com/health` |
 
