@@ -64,22 +64,22 @@
 
 ```python
 def evaluate_driver_optimized(driver, pickup):
-    # Étape 1 : SimSwap (CIBA, 35% du score)
+    # Étape 1 : SimSwap (CIBA)
     sim_swap = call_sim_swap_api(driver.phone)
     if sim_swap.recent_swap:
         return TrustScore(0, status="blocked", reason="SIM_SWAP_DETECTED")
     
-    # Étape 2 : Device Status (CIBA, 20% du score)  
+    # Étape 2 : Device Status (CIBA)
     device = call_device_status_api(driver.device_id)
     if device.status == "suspicious":
         # On continue mais on note le flag
         flags.append("SUSPICIOUS_DEVICE")
     
-    # Étape 3 : Location (CIBA, 25% du score)
+    # Étape 3 : Location (CIBA)
     location = call_location_api(driver.phone)
     mismatch = calculate_distance(location, pickup) > 2.0  # km
     
-    # Étape 4 : Number Verify (AUTHORIZATION, 20% du score) - SEULEMENT si étapes 1-3 OK
+    # Étape 4 : Number Verify (AUTHORIZATION) - SEULEMENT si étapes 1-3 OK
     if not flags and not mismatch:
         number_ok = call_number_verify_api(driver.phone)  # Flow avec interaction
     else:
@@ -98,7 +98,7 @@ def evaluate_driver_optimized(driver, pickup):
 ## 3. IA Dynamique pour Pondérations (vs Formule Statique)
 
 ### Suggestion du mentor
-> L'IA ne pourrait-elle pas réajuster les facteurs de manière dynamique ? TrustScore = w1 * Vérification_Téléphone + w2 * Simswap + w3 * Localisation + w4 * Écart_Temps_Km + w5 * Note_Client. Des IAs type tensorflow, scikit-learn peuvent apprendre et ajuster les pondérations.
+> L'IA ne pourrait-elle pas réajuster les facteurs de manière dynamique ? Des IAs type tensorflow, scikit-learn peuvent apprendre et ajuster les pondérations.
 
 ### Réponse : Architecture ML pour Trust Score Dynamique
 
@@ -376,7 +376,7 @@ Sans IA, les signaux réseau CAMARA sont des données brutes. L'IA les transform
 
 | Sans IA (règles fixes) | Avec IA SafeRide (adaptatif) |
 | ---------------------- | --------------------------- |
-| SIM Swap = toujours 35% | Pondérations adaptées par ville |
+| Règles fixes identiques partout | Pondérations adaptées par ville |
 | Alerte si déviation > 500m (fixe) | Alerte si déviation anormale **pour ce trajet** (contexte : embouteillages) |
 | Même score pour tous les chauffeurs | Score pondéré par historique, heure, zone de fraude |
 | Faux positifs fréquents (30%) | Faux positifs réduits à < 5% |

@@ -30,12 +30,12 @@ Créer un service Render **Web Service** depuis GitHub.
 | Key | Value |
 |---|---|
 | `SAFERIDE_ALLOWED_ORIGINS` | `https://saferide.futureafri.com,http://localhost:5173,http://127.0.0.1:5173` |
-| `SAFERIDE_ADMIN_TOKEN` | choisir un token secret fort |
+| `SAFERIDE_ADMIN_TOKEN` | utiliser la valeur du fichier local `.env` |
 | `SAFERIDE_APP_NAME` | `SafeRide API` |
 | `SAFERIDE_USE_REAL_NAC` | `off` |
 | `PYTHON_VERSION` | `3.12` |
 
-Remplacer `https://saferide.futureafri.com` par le vrai sous-domaine LWS.
+Le fichier local `.env` contient les valeurs prêtes à copier dans Render. Ne pas publier ce fichier.
 
 ## 3. Frontend LWS
 

@@ -56,16 +56,12 @@ Quand le passager voit les chauffeurs, il voit un score et une couleur :
 **Comment est calculé le score ?**
 SafeRide demande à l'opérateur télécom (MTN/Orange) 4 infos :
 
-1. **SIM Swap** (35% du score) : Est-ce que le chauffeur a changé de carte SIM récemment ? (fraude classique)
-2. **Position** (25% du score) : Est-ce que le GPS du téléphone correspond à la vraie position réseau ?
-3. **Appareil** (20% du score) : Est-ce que le téléphone est normal ou suspect ?
-4. **Numéro** (20% du score) : Est-ce que le numéro appartient bien au chauffeur ?
+1. **SIM Swap** : Est-ce que le chauffeur a changé de carte SIM récemment ? (fraude classique)
+2. **Position** : Est-ce que le GPS du téléphone correspond à la vraie position réseau ?
+3. **Appareil** : Est-ce que le téléphone est normal ou suspect ?
+4. **Numéro** : Est-ce que le numéro appartient bien au chauffeur ?
 
-**Formule simple** :  
-`Score = (SIM Swap × 0.35) + (Position × 0.25) + (Appareil × 0.20) + (Numéro × 0.20)`
-
-Exemple : Si SIM Swap = 100 (OK), Position = 80, Appareil = 90, Numéro = 95  
-→ Score = (100×0.35) + (80×0.25) + (90×0.20) + (95×0.20) = **35 + 20 + 18 + 19 = 92** ✅
+Le score final est calculé par le moteur propriétaire SafeRide.
 
 ---
 

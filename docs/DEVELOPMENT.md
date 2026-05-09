@@ -10,7 +10,7 @@ Le projet part **uniquement** du document `SafeRide_Ideation - Anglais.pdf`
 fourni par le hackathon Africa Ignite. Le document décrit :
 
 - une vision : *Network Trust Score* pour la mobilité en Afrique subsaharienne
-- une formule pondérée (`SCR = SIM Swap × 35% + Localisation × 25% + Appareil × 20% + Numéro × 20%`)
+- un moteur de scoring propriétaire combinant plusieurs signaux CAMARA
 - 7 APIs CAMARA orchestrées via Nokia Network-as-Code
 - un modèle économique (commission 8 %, abonnement Premium 5 000 FCFA/mois, licence B2B)
 - une roadmap en 4 phases (Phase 0 hackathon → Phase 3 expansion régionale)

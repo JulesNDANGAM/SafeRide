@@ -29,11 +29,7 @@ SafeRide ne se contente pas de vérifier le chauffeur au départ. Le projet couv
 
 ### 4.1 Avant la course — Le bouclier d'entrée (Network Trust Score)
 
-SafeRide calcule un **Network Trust Score (SCR)** dynamique de 0 à 100 **avant que le passager ne monte**, en orchestrant 5 APIs CAMARA via un agent IA :
-
-```
-SCR = SIM Swap × 35% + Localisation × 25% + Appareil × 20% + Numéro × 20%
-```
+SafeRide calcule un **Network Trust Score (SCR)** dynamique de 0 à 100 **avant que le passager ne monte**, en orchestrant plusieurs signaux CAMARA via un agent IA et un moteur propriétaire.
 
 Trois niveaux de confiance :
 
@@ -140,7 +136,7 @@ L'IA n'est pas un gadget marketing chez SafeRide — elle est **le cœur du mote
 
 | Sans IA (règles fixes) | Avec IA SafeRide (adaptatif) |
 | ---------------------- | --------------------------- |
-| SIM Swap = toujours 35% | Pondérations adaptées par ville (Lagos : GPS 40%, Douala : SIM 40%) |
+| Règles fixes identiques partout | Pondérations adaptées par ville et contexte |
 | Alerte si déviation > 500m | Alerte si déviation anormale **pour ce trajet** (contexte : embouteillages, détour raisonnable) |
 | Même score pour tous les chauffeurs | Score pondéré par historique, heure, zone de fraude connue |
 | Faux positifs fréquents (30%) | Faux positifs réduits à < 5% par apprentissage continu |
@@ -227,10 +223,10 @@ SafeRide propose son moteur de confiance en tant que **API SaaS** pour les entre
 SafeRide implémente une **matrice de décision** pour réduire les coûts API de 25-75% :
 
 **Séquence optimisée** (early stopping) :
-1. **SIM Swap** (CIBA, 35% poids) → Si fraude détectée : **STOP** (1 seul appel, 75% économie)
-2. **Device Status** (CIBA, 20% poids) → Continue si étape 1 OK
-3. **Location** (CIBA, 25% poids) → Vérifie cohérence position
-4. **Number Verify** (Authorization, 20% poids) → Seulement si étapes 1-3 OK
+1. **SIM Swap** (CIBA) → Si fraude détectée : **STOP** (1 seul appel, économie API)
+2. **Device Status** (CIBA) → Continue si étape 1 OK
+3. **Location** (CIBA) → Vérifie cohérence position
+4. **Number Verify** (Authorization) → Seulement si étapes 1-3 OK
 
 **Matrice des cas** :
 

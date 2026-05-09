@@ -67,12 +67,12 @@ Passager demande une course
 Backend identifie les chauffeurs dans la ville cible
         │
         ▼
-TrustAgent.orchestrate(driver) ─► appelle 4 APIs CAMARA en parallèle :
-        SIM Swap (35%) + Localisation (25%) + Appareil (20%) + Numéro (20%)
+TrustAgent.orchestrate(driver) ─► orchestre les signaux CAMARA selon une logique propriétaire :
+        SIM Swap + Localisation + Appareil + Numéro
         + 3 APIs supplémentaires : QoD, Congestion Insights, Geofencing
         │
         ▼
-TrustScoringService.evaluate ─► SCR = pondération + statut + anomalies
+TrustScoringService.evaluate ─► score propriétaire + statut + anomalies
         │
         ▼
 Frontend affiche 3 buckets : Reliable / Attention / Blocked

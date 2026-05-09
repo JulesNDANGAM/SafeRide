@@ -35,10 +35,10 @@ Le MVP utilise un mock fidèle aux signatures CAMARA. La bascule vers le SDK Nok
 SIM Swap, Number Verification, Location Verification et Device Status. SafeRide les utilise toutes les quatre.
 
 **Q10. Comment est calculé le score ?**
-`SCR = SIM Swap × 35% + Localisation × 25% + Device × 20% + Numéro × 20%`
+Le score est calculé par un moteur propriétaire SafeRide combinant plusieurs signaux réseau et contextuels.
 
-**Q11. Pourquoi 35 % pour SIM Swap ?**
-La fraude SIM swap est statistiquement **la première cause** d’usurpation d’identité chauffeur en Afrique subsaharienne (+340 % en 3 ans). Elle a donc le poids le plus élevé.
+**Q11. Pourquoi le SIM Swap est-il important ?**
+La fraude SIM swap est une cause majeure d’usurpation d’identité chauffeur. SafeRide l’utilise comme signal critique dans son moteur de confiance.
 
 **Q12. Que se passe-t-il pour les seuils 70 et 40 ?**
 - ≥ 70 : course autorisée (suivi standard)

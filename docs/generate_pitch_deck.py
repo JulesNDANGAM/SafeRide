@@ -203,7 +203,7 @@ def slide_solution(prs):
               Inches(0.6), Inches(1.85), Inches(12.0), Inches(0.5),
               size=16, color=MUTED)
 
-    formula = "SCR  =  SIM Swap × 35%  +  Location × 25%  +  Device × 20%  +  Number × 20%"
+    formula = "SCR  =  moteur propriétaire SafeRide combinant signaux réseau, contexte et historique"
     _panel(s, Inches(0.6), Inches(2.45), Inches(12.0), Inches(0.85), accent=True)
     _add_text(s, formula, Inches(0.6), Inches(2.6), Inches(12.0), Inches(0.6),
               size=18, bold=True, color=ACCENT, align=PP_ALIGN.CENTER, font="Space Grotesk")

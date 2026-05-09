@@ -6,7 +6,7 @@ Prototype hackathon basé sur le document `SafeRide_Ideation - Anglais.pdf`. Saf
 
 ## Fonctionnalités / Features
 
-- **Backend FastAPI** avec moteur de score (`SIM Swap × 35% + Localisation × 25% + Appareil × 20% + Numéro × 20%`)
+- **Backend FastAPI** avec moteur de confiance propriétaire SafeRide
 - **5 APIs CAMARA simulées** : `SIM Swap`, `Location Verification`, `Device Status`, `Number Verification`, `Quality on Demand` + `Congestion Insights` + `Geofencing`
 - **Agent IA** (orchestration intelligente, ordre adapté à la ville/heuristique régionale, scoring adaptatif, détection d'anomalies post-course, log explicable)
 - **Vérification post-course** : l'IA vérifie la cohérence du trajet, alerte automatiquement la flotte ou la personne de confiance du passager si anomalie

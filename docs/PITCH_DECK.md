@@ -22,12 +22,12 @@ Les opérateurs **savent** si une SIM a été échangée, si un GPS est truqué.
 
 ## Bouclier d'entrée (AVANT) — Network Trust Score 0-100
 
-| API CAMARA | Rôle | Poids | Flow Nokia NaC |
+| API CAMARA | Rôle | Usage | Flow Nokia NaC |
 |------------|------|-------|----------------|
-| **Number Verification** | Le numéro appartient-il au chauffeur ? | 20% | Authorization Code |
-| SIM Swap | La SIM a-t-elle été échangée ? | 35% | CIBA |
-| Location Verification | GPS = position réseau ? | 25% | CIBA |
-| Device Status | Appareil légitime ? | 20% | CIBA |
+| **Number Verification** | Le numéro appartient-il au chauffeur ? | Signal critique | Authorization Code |
+| SIM Swap | La SIM a-t-elle été échangée ? | Signal critique | CIBA |
+| Location Verification | GPS = position réseau ? | Signal de cohérence | CIBA |
+| Device Status | Appareil légitime ? | Signal de sécurité | CIBA |
 | Quality on Demand | Connectivité garantie en course | Monitoring | CIBA |
 
 **Insight Mentor** : Number Verify EN PREMIER. Si échec → pas besoin de SIM Swap. **83% économie API sur fraude.**
@@ -209,7 +209,7 @@ NOKIA NETWORK-AS-CODE
 > Onglet **Passager** → Carte Douala, 5 chauffeurs visibles avec score coloré (🟢🟡🔴). Sélection d'Amina N. (score 92, Reliable).
 
 ### Étape 2 : Vérification pré-course (30s)
-> Backend appelle Number Verification EN PREMIER. Score OK → SIM Swap → Location → Device. Trust Score = 92.5. Course démarrée.
+> Backend appelle Number Verification EN PREMIER. Vérifications OK → score propriétaire validé. Course démarrée.
 
 ### Étape 3 : Monitoring temps réel (30s)
 > Onglet monitoring → Cycle 1-3 : QoD nominal, Geofencing OK. Simulation chute QoD → alerte critique bilingue (FR/EN).

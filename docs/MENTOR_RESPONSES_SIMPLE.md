@@ -70,15 +70,13 @@ Les APIs des opérateurs coûtent cher (environ 0.05€ par appel). Si on sait d
 ## 3. "L'IA pourrait ajuster les pondérations dynamiquement ?"
 
 ### Ce que dit le mentor :
-Au lieu d'avoir des poids fixes (SIM Swap 35%, Position 25%...), est-ce que l'IA pourrait apprendre et ajuster automatiquement ?
+Au lieu d'avoir des r?gles fixes, est-ce que l'IA pourrait apprendre et ajuster automatiquement ?
 
 ### Notre réponse simple :
 **Oui, et c'est notre avantage compétitif !**
 
-#### Phase 1 (Hackathon) : Formule simple
-```
-Score = (SIM Swap × 35%) + (Position × 25%) + (Appareil × 20%) + (Numéro × 20%)
-```
+#### Phase 1 (Hackathon) : moteur propriétaire simple
+SafeRide combine plusieurs signaux réseau dans un moteur de confiance propriétaire.
 
 #### Phase 2 (Après hackathon) : IA qui apprend
 L'IA regarde l'historique :
