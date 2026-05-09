@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 *.log
+*.zip
 .venv/
 venv/
 node_modules/
