@@ -1,4 +1,4 @@
-# SafeRide — Network Trust Score MVP
+# SafeRide : Network Trust Score MVP
 
 > Every ride, checked. Every journey, safe.
 
