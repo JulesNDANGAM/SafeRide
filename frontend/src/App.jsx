@@ -78,7 +78,7 @@ export default function App() {
       {bootError && (
         <div className="container">
           <div className="error-banner">
-            Backend unreachable: {bootError}. Run <span className="kbd">uvicorn app.main:app --reload --app-dir backend</span>
+            Connexion au service SafeRide momentanément indisponible. Vérifiez votre connexion ou réessayez dans quelques instants.
           </div>
         </div>
       )}
